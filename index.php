@@ -11,7 +11,7 @@
         <heder>
             <h1>9-Б класс СЗСШ№1</h1>
             <ul id="navbarH">
-                <li><a href="?">Главная</a></li>
+                <li><a href="?article=main">Главная</a></li>
                 <li><a href="?article=album">Альбом</a></li>
                 <li><a href="?article=news">Новости</a></li>
                 <li><a href="?article=chat">Чат</a></li>
@@ -19,7 +19,7 @@
         </heder>
         <nav>
             <ul id="navbarV">
-                <li><a href="?">Главная</a></li>
+                <li><a href="?article=main">Главная</a></li>
                 <li><a href="?article=album">Альбом</a></li>
                 <li><a href="?article=news">Новости</a></li>
                 <li><a href="?article=chat">Чат</a></li>
@@ -27,17 +27,19 @@
         </nav>
         <article>
             <?php
-            if(!in_array('article', $_GET))
+            if(isset($_GET['article'])){
+            $article = $_GET['article'];
+            if($article == 'main')
                 include("views/main.php");
-            else {
-                $article = $_GET['article'];
-                if($article == 'album')
-                    include("views/album.php");
-                elseif($article == 'news')
-                    include("views/news.php");
-                elseif($article == 'chat')
-                    include("views/chat.php");
-                }
+            elseif($article == 'album')
+                include("views/album.php");
+            elseif($article == 'news')
+                include("views/news.php");
+            elseif($article == 'chat')
+                include("views/chat.php");
+            } else {
+                include("views/main.php");
+            }
             ?>
         </article>
         <footer>
