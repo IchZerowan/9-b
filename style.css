@@ -53,3 +53,15 @@
 h1 {
     text-align: center;
 }
+
+body {
+    margin: 8px;
+}
+
+article {
+    display: inline-flex;
+}
+
+nav {
+    display: inline-flex;
+}
