@@ -11,23 +11,31 @@
         <heder>
             <h1>9-Б класс СЗСШ№1</h1>
             <ul id="navbarH">
-                <li><a href="#">Главная</a></li>
-                <li><a href="#">Альбом</a></li>
-                <li><a href="#">Обьявления</a></li>
-                <li><a href="#">Чат</a></li>
+                <li><a href="?article=main">Главная</a></li>
+                <li><a href="?article=album">Альбом</a></li>
+                <li><a href="?article=news">Новости</a></li>
+                <li><a href="?article=chat">Чат</a></li>
             </ul>
         </heder>
         <nav>
             <ul id="navbarV">
-                <li><a href="#">Главная</a></li>
-                <li><a href="#">Альбом</a></li>
-                <li><a href="#">Обьявления</a></li>
-                <li><a href="#">Чат</a></li>
+                <li><a href="?article=main">Главная</a></li>
+                <li><a href="?article=album">Альбом</a></li>
+                <li><a href="?article=news">Новости</a></li>
+                <li><a href="?article=chat">Чат</a></li>
             </ul>
         </nav>
         <article>
             <?php
-                include("views/main.php")
+            $article = $_GET['article'];
+            if($article == 'main')
+                include("views/main.php");
+            elseif($article == 'album')
+                include("views/album.php");
+            elseif($article == 'news')
+                include("views/news.php");
+            elseif($article == 'chat')
+                include("views/chat.php");
             ?>
         </article>
         <footer>
