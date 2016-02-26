@@ -27,6 +27,8 @@
         </nav>
         <article>
             <section>
+                <h2>Новости</h2>
+                <br>  
                 <?php
                 $link = db_connect();
                 $article = get_news($link); 
@@ -40,6 +42,7 @@
             </section>
         </article>
         <footer>
+            <hr>
             <i>Copyright &copy; 2016</i>
             <br>
             <b>By IMC</b>

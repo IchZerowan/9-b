@@ -43,6 +43,7 @@
             </section>
         </article>
         <footer>
+            <hr>
             <i>Copyright &copy; 2016</i>
             <br>
             <b>By IMC</b>

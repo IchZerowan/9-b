@@ -27,6 +27,8 @@
         </nav>
         <article>
             <section>
+                <h2>Чат</h2>
+                <br>
                 <form method="post", action="index.php?action=add">
                     <label>Логин<br>
                         <input type="text" name="login" value="" autofocus required>
@@ -54,6 +56,7 @@
             </section>
         </article>
         <footer>
+            <hr>
             <i>Copyright &copy; 2016</i>
             <br>
             <b>By IMC</b>

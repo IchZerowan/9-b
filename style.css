@@ -3,7 +3,7 @@ body{
 }
 
 #navbarV {
-    margin: 0;
+    margin: 10px;
     padding: 0;
     list-style-type: none;
     width: 150px;
@@ -26,7 +26,7 @@ body{
 }
 
 #navbarH {
-    margin: 0;
+    margin: 10px;
     padding: 0;
     list-style-type: none;
     border: 2px solid #0066FF;
@@ -55,6 +55,7 @@ body{
 
 h1 {
     text-align: center;
+    color: darkblue;
 }
 
 body {
@@ -62,11 +63,11 @@ body {
 }
 
 article {
-    display: inline-flex;
+    display: inline-block;
 }
 
 nav {
-    display: inline-flex;
+    float: left;
 }
 
 h2 {
@@ -103,5 +104,5 @@ form {
     border: 2px solid black;
     border-radius: 20px 5px;
     padding: 10px;
-    margin: 5px;
+    margin: 10px;
 }
