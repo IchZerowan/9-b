@@ -1,5 +1,5 @@
 <?php
-require_once("database.php"); 
+require_once("models/database.php"); 
 require_once("models/articles.php");
 
 if(isset($_GET['action'])){
@@ -22,6 +22,14 @@ elseif(isset($_GET['article'])){
         include("views/news.php");
     elseif($article == 'chat')
         include("views/chat.php");
+    elseif($article == 'login')
+        include("login/login.php");
+    elseif($article == 'register')
+        include("login/register.php");
+    elseif($article == 'logout')
+        include("login/logout.php");
+    elseif($article == 'intropage')
+        include("login/intropage.php");
 } else 
     include("views/main.php");
 ?>
