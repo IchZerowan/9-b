@@ -16,5 +16,4 @@
             </article>
         <?php include("includes/footer.html")?>
     </body>         
-<?php include("includes/footer.php"); ?>
 <?php endif; ?>
