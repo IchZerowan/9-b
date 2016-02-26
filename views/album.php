@@ -34,8 +34,8 @@
                 $article = get_photos($link); 
                 ?> 
                 <?php foreach($article as $a): ?>
-                    <div class="div">
-                        <img src=<?="album/".$a['name']?>>
+                    <div class="photo">
+                        <a href='<?="album/".$a['name']?>'><img src=<?="album/".$a['name']?>></a>
                         <br>
                         <p><?=$a['name']?></p>
                     </div>
