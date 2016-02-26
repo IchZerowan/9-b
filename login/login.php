@@ -55,7 +55,7 @@ while($row=mysql_fetch_assoc($query))
                     </label> 
                     <br>
                     <label>
-	                   <input type="submit" class="btn" name="login" value="Log In">
+	                   <input type="submit" class="btn" name="login"">
                     </label>
                     <br>
 	                Еще не зарегистрированы?<a href="index.php?article=register">Регистрация</a>!
