@@ -1,19 +1,19 @@
 <?php
+    Include("connection.php");
     session_start();
     if(!isset($_SESSION["session_username"])):
-    header("location:index.php?article=login");
+    header("location:login.php");
     else:
 ?>
-<?php include("includes/head.html")?>
+    <?php include("includes/head.html")?>
     <body>
-        <?php include("includes/header.html")?>
         <?php include("includes/nav.html")?>
-            <article>
-                <section>
-                    <h2>Добро пожаловать, <span><?php echo $_SESSION['session_username'];?>! </span></h2>
-                    <p><a href="index.php?article=logout">Выйти</a> из системы</p>
-                </section>
-            </article>
-        <?php include("includes/footer.html")?>
+        <article>
+            <section>
+                <h2>Добро пожаловать, <span><?php echo $_SESSION['session_username'];?>! </span></h2>
+                <p><a href="logout.php">Выйти</a> из системы</p>
+            </section>
+        </article>
+    <?php include("../includes/footer.html")?>
     </body>         
 <?php endif; ?>

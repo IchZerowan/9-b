@@ -18,9 +18,10 @@ body{
     padding: 5px 10px;
     text-decoration: none;
     font-weight: bold;
-    display: block;
-    
-}#navbarV a:hover {
+    display: block;  
+}
+
+#navbarV a:hover {
     border-radius: 20px 5px;
     background-color: #0066FF;
 }
@@ -74,6 +75,7 @@ nav {
 h2 {
     text-align: center;
     margin: 10px;
+    color: darkblue;
 }
 
 img{
@@ -102,7 +104,7 @@ hr{
 }
 
 form {
-    border: 2px solid black;
+    border: 2px solid darkblue;
     border-radius: 20px 5px;
     padding: 10px;
     margin: 10px;
@@ -110,4 +112,8 @@ form {
 
 .photo{
     float: left;
+}
+
+h3{
+    color: blue;
 }

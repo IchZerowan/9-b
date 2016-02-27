@@ -1,12 +1,13 @@
 <?php
+    Include("connection.php");  
 	session_start();
 	?>
 
-	<?php require_once("models/database.php"); ?> 
+	<?php require_once("../models/database.php"); ?> 
 	<?php
 	
 	if(isset($_SESSION["session_username"])){
-	header("Location: index.php?article=intropage");
+	header("Location: intropage.php");
 	}
 
 	if(isset($_POST["login"])){
@@ -26,7 +27,7 @@ while($row=mysql_fetch_assoc($query))
   if($username == $dbusername && $password == $dbpassword)
  {
 	 $_SESSION['session_username']=$username;
-   header("Location: index.php?article=intropage");
+   header("Location: intropage.php");
 	}
 	} else {
 	echo  "Invalid username or password!";
@@ -38,14 +39,13 @@ while($row=mysql_fetch_assoc($query))
 ?>
 <!DOCTYPE html>
 	<html lang="en">
-	<?php include("includes/head.html")?>
+    <?php include("includes/head.html")?>
     <body>
-        <?php include("includes/header.html")?>
         <?php include("includes/nav.html")?>
         <article>
             <sextion>
                 <h2>Вход</h2>
-                <form method="post" action="index.php?article=intropage">
+                <form method="post" action="intropage.php">
                     <label>Имя пользователя<br>
                         <input type="text" name="username"size="20" value="">
                     </label>
@@ -58,10 +58,10 @@ while($row=mysql_fetch_assoc($query))
 	                   <input type="submit" class="btn" name="login"">
                     </label>
                     <br>
-	                Еще не зарегистрированы?<a href="index.php?article=register">Регистрация</a>!
+	                Еще не зарегистрированы?<a href="register.php">Регистрация</a>!
                 </form>
             </section>
         </aricle>
-        <?php include("includes/footer.html")?>
+        <?php include("../includes/footer.html")?>
     </body>
 </html>
