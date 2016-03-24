@@ -1,11 +1,8 @@
 <?php
-    define('MYSQL_SERVER', 'localhost');
-    define('MYSQL_USER', 'root');
-    define('MYSQL_PASSWORD', '');
-    define('MYSQL_DB', '9b');
+    require("constants.php");
 
     function db_connect() {
-        $link = mysqli_connect(MYSQL_SERVER, MYSQL_USER, MYSQL_PASSWORD, MYSQL_DB) or die("Error :".mysqli_error($link));
+        $link = mysqli_connect(DB_SERVER, DB_USER, DB_PASS, DB_NAME) or die("Error :".mysqli_error($link));
         if (!mysqli_set_charset($link, "utf8")) {
             printf("Error: ".mysqli_error($link));
         }

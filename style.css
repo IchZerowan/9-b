@@ -117,3 +117,8 @@ form {
 h3{
     color: blue;
 }
+
+.textarea{
+    width: 500px;
+    height: 150px;
+}

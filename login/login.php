@@ -1,42 +1,42 @@
 <?php
     Include("connection.php");  
 	session_start();
-	?>
-
-	<?php require_once("../models/database.php"); ?> 
-	<?php
+?>
+<?php
 	
-	if(isset($_SESSION["session_username"])){
+if(isset($_SESSION["session_username"])){
 	header("Location: intropage.php");
-	}
+}
 
-	if(isset($_POST["login"])){
+if(isset($_POST["login"])){
 
 	if(!empty($_POST['username']) && !empty($_POST['password'])) {
-	$username=htmlspecialchars($_POST['username']);
-	$password=htmlspecialchars($_POST['password']);
-	$query =mysql_query("SELECT * FROM usertbl WHEREusername='".$username."' AND password='".$password."'");
-	$numrows=mysql_num_rows($query);
-	if($numrows!=0)
- {
-while($row=mysql_fetch_assoc($query))
- {
-	$dbusername=$row['username'];
-  $dbpassword=$row['password'];
- }
-  if($username == $dbusername && $password == $dbpassword)
- {
-	 $_SESSION['session_username']=$username;
-   header("Location: intropage.php");
-	}
-	} else {
-	echo  "Invalid username or password!";
- }
-	} else {
-    $message = "All fields are required!";
-	}
-	}
+        $username=htmlspecialchars($_POST['username']);
+        $password=htmlspecialchars($_POST['password']);
+        $key = PASS_KEY;
+        $query =mysql_query("SELECT * FROM usertbl WHERE username='".$username."' AND password = AES_DECRYPT('".$password."', '".$key."')");
+        $numrows=mysql_num_rows($query);
+        if($numrows!=0)
+        {
+            while($row=mysql_fetch_assoc($query))
+            {
+                $dbusername=$row['username'];
+                $dbpassword=$row['password'];
+            }
+            if($username == $dbusername && $password == $dbpassword)
+            {
+                $_SESSION['session_username']=$username;
+                header("Location: intropage.php");
+            }
+        } else {
+            echo  "Invalid username or password!";
+        }
+    } else {
+        $message = "All fields are required!";
+    }
+}
 ?>
+
 <!DOCTYPE html>
 	<html lang="en">
     <?php include("includes/head.html")?>
@@ -45,7 +45,7 @@ while($row=mysql_fetch_assoc($query))
         <article>
             <sextion>
                 <h2>Вход</h2>
-                <form method="post" action="intropage.php">
+                <form method="post" action="login.php">
                     <label>Имя пользователя<br>
                         <input type="text" name="username"size="20" value="">
                     </label>
@@ -55,7 +55,7 @@ while($row=mysql_fetch_assoc($query))
                     </label> 
                     <br>
                     <label>
-	                   <input type="submit" class="btn" name="login"">
+	                   <input type="submit" class="btn" name="login" value="Log In">
                     </label>
                     <br>
 	                Еще не зарегистрированы?<a href="register.php">Регистрация</a>!

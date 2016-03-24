@@ -9,12 +9,8 @@
                 <h2>Чат</h2>
                 <br>
                 <form method="post", action="index.php?action=add">
-                    <label>Логин<br>
-                        <input type="text" name="login" value="" autofocus required>
-                    </label>
-                    <br>
                     <label>Сообщение<br>
-                        <textarea name="message" required></textarea>
+                        <textarea name="message" class="textarea"required></textarea>
                     </label>
                     <br>
                     <label>

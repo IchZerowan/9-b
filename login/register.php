@@ -9,9 +9,10 @@ if (isset($_POST["register"])) {
 $query     = mysql_query("SELECT * FROM usertbl WHERE username='" . $username . "'") or die(mysql_error());
         $numrows   = mysql_num_rows($query);
         if ($numrows == 0) {
+            $key = PASS_KEY;
             $sql    = "INSERT INTO usertbl
-  (full_name, email, username,password)
-    VALUES('$full_name','$email', '$username', '$password')";
+            (full_name, email, username,password)
+            VALUES('$full_name', '$email', '$username', AES_ENCRYPT('$password', '$key'))";
             $result = mysql_query($sql);
             if ($result) {
                 $message = "Account Successfully Created";
@@ -29,6 +30,7 @@ $query     = mysql_query("SELECT * FROM usertbl WHERE username='" . $username . 
 ?>
 
 	<?php if (!empty($message)) {echo "<p class=\"error\">" . "MESSAGE: ". $message . "</p>";} ?>
+
 <!DOCTYPE html>
 	<html lang="en">
     <?php include("includes/head.html")?>

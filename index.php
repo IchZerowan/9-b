@@ -1,12 +1,16 @@
 <?php
 require_once("models/database.php"); 
 require_once("models/articles.php");
+session_start();
 
 if(isset($_GET['action'])){
     if($_GET['action'] == 'add') {
-        if(!empty($_POST)) {
+        if(!empty($_POST) && isset($_SESSION['session_username'])) {
             $link = db_connect();
-            message_add($link, $_POST['login'], $_POST['message']);
+            message_add($link, $_SESSION['session_username'], $_POST['message']);
+        }
+        elseif (!isset($_SESSION['session_username'])) {
+            header("Location: login/login.php");
         }
         include("views/chat.php");
     }
