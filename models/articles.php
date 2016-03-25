@@ -67,4 +67,17 @@
             die(mysqli_error($link));
         return true;
     }
+    
+    function add_content($link, $page, $title, $content) {
+        $title = trim($title);
+        $content = trim($content);
+        if ($title == "")
+            return false;
+        $t = "INSERT INTO ".$page." (title, content) VALUES ('%s', '%s')";
+        $query = sprintf($t, mysqli_real_escape_string($link, $title), mysqli_real_escape_string($link, $content));
+        $result = mysqli_query($link, $query);
+        if (!$result) 
+            die(mysqli_error($link));
+        return true;
+    }
 ?>

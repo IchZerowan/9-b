@@ -12,7 +12,7 @@ $query     = mysql_query("SELECT * FROM usertbl WHERE username='" . $username . 
             $key = PASS_KEY;
             $sql    = "INSERT INTO usertbl
             (full_name, email, username,password)
-            VALUES('$full_name', '$email', '$username', AES_ENCRYPT('$password', '$key'))";
+            VALUES('$full_name', '$email', '$username', '$password')";
             $result = mysql_query($sql);
             if ($result) {
                 $message = "Account Successfully Created";

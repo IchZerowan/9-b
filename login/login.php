@@ -14,7 +14,7 @@ if(isset($_POST["login"])){
         $username=htmlspecialchars($_POST['username']);
         $password=htmlspecialchars($_POST['password']);
         $key = PASS_KEY;
-        $query =mysql_query("SELECT * FROM usertbl WHERE username='".$username."' AND password = AES_DECRYPT('".$password."', '".$key."')");
+        $query =mysql_query("SELECT * FROM usertbl WHERE username='".$username."' AND password = '".$password."'");
         $numrows=mysql_num_rows($query);
         if($numrows!=0)
         {
