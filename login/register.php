@@ -12,7 +12,7 @@ $query     = mysql_query("SELECT * FROM usertbl WHERE username='" . $username . 
             $key = PASS_KEY;
             $sql    = "INSERT INTO usertbl
             (full_name, email, username,password)
-            VALUES('$full_name', '$email', '$username', AES_ENCRYPT('$password', '$key'))";
+            VALUES('$full_name', '$email', '$username', '$password')";
             $result = mysql_query($sql);
             if ($result) {
                 $message = "Account Successfully Created";
@@ -40,6 +40,7 @@ $query     = mysql_query("SELECT * FROM usertbl WHERE username='" . $username . 
             <section>
                 <h1>Регистрация</h1>
                 <form action="register.php" id="registerform" method="post"name="registerform">
+                    <p>Используйте латиницу!</p>
                     <p>
                         <label for="user_login">Полное имя<br>
                         <input class="input" id="full_name" name="full_name"size="32"  type="text" value=""></label>
