@@ -6,7 +6,7 @@
         <?php include("includes/nav.html")?>
         <article>
             <section>
-                <h2>Новости</h2>
+                <h2>Домашние задания</h2>
                 <br>  
                 <?php
                 $link = db_connect();
