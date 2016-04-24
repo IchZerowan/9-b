@@ -14,6 +14,7 @@
                 ?>    
                 <?php foreach($article as $a): ?>
                     <div class="article">
+                        <hr>
                         <h3><?=$a['title']?></h3>
                         <p><?=$a['content']?></p>
                     </div>

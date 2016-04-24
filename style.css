@@ -1,5 +1,5 @@
 body{
-    background-color: lightblue;
+    background-color: white;
 }
 
 #navbarV {
@@ -61,6 +61,7 @@ h1 {
 
 body {
     margin: 8px;
+    background-image: url("fon.jpg");
 }
 
 article {
@@ -75,7 +76,7 @@ nav {
 h2 {
     text-align: center;
     margin: 10px;
-    color: darkblue;
+    color: #000066;
 }
 
 img{
@@ -115,7 +116,7 @@ form {
 }
 
 h3{
-    color: blue;
+    color: darkblue;
 }
 
 .textarea{

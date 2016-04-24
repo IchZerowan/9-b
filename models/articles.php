@@ -80,4 +80,11 @@
             die(mysqli_error($link));
         return true;
     }
+    
+    function get_reg($link) {
+        $query = "SELECT COUNT(*) FROM usertbl;";
+        $result = mysqli_query($link, $query) || die(mysql_error());
+        $row = mysql_fetch_array($result);
+        return $row['0'];
+    }
 ?>
