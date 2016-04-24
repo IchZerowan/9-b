@@ -40,7 +40,7 @@ $query     = mysql_query("SELECT * FROM usertbl WHERE username='" . $username . 
             <section>
                 <h1>Регистрация</h1>
                 <form action="register.php" id="registerform" method="post"name="registerform">
-                    <p>Используйте латиницу!</p>
+                    <p><b>Используйте латиницу!</b></p>
                     <p>
                         <label for="user_login">Полное имя<br>
                         <input class="input" id="full_name" name="full_name"size="32"  type="text" value=""></label>
