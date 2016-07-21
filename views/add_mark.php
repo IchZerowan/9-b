@@ -17,6 +17,19 @@
                         <input name="addmark" type="submit" value="Сохранить" class="btn" required>
                     </label>
                 </form>
+<?php
+    $link = db_connect();
+    $marks = get_marks($link, $id); 
+    foreach($marks as $a): 
+?>
+                <div class="article">
+                    <p>
+                        <i><?=$a['date']?></i>:  
+                        <b><?=$a['mark']?></b>
+                        - <?=$a['why']?>
+                    </p>
+                </div>
+<?php endforeach ?>
             </section>
         </article>
 <?php include("includes/footer.html")?>
