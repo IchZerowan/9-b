@@ -123,3 +123,8 @@ h3{
     width: 500px;
     height: 150px;
 }
+
+table{
+    width: 100%;
+    text-align: center;
+}

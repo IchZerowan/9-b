@@ -127,6 +127,9 @@ elseif (isset($_GET['journal'])) {
 }
 
 elseif (isset($_GET['teacher'])) {
+    if (!(($_SESSION["session_username"] !== null) AND ($_SESSION["session_username"] == "burmenko"))){
+        header("Location: index.php?article=main");
+    }
     switch ($_GET['teacher']) {
         case 'marks':
             include("views/students.php");

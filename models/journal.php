@@ -1,6 +1,9 @@
 <?php
-        function get_students($link) {
-            $query = "SELECT * FROM students ORDER BY name";
+        function get_students($link, $class = -1) {
+            if ($class == -1)
+                $query = "SELECT * FROM students ORDER BY name";
+            else
+                $query = "SELECT * FROM students WHERE class=".$class." ORDER BY name";
             $result = mysqli_query($link, $query);
             if (!$result) 
                 die(mysqli_error($link));
