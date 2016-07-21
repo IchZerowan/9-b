@@ -3,6 +3,7 @@
         header("Location: index.php?journal=marks&id=".$_SESSION['student_id']);
     }
 ?>
+
 <?php include("includes/header.html")?>
 <?php include("includes/nav.html")?>
         <article>

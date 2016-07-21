@@ -3,7 +3,7 @@
         <article>
             <section>
                 <h2>Оценки ученика</h2>
-                <a href="index.php?journal=logout">Выход</a>
+                <a class="btn"href="index.php?journal=logout">Выход</a>
 <?php
     $link = db_connect();
     $marks = get_marks($link, $_GET['id']); 

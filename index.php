@@ -122,7 +122,13 @@ elseif (isset($_GET['journal'])) {
             break;
             
         case 'marks':
-            include("views/marks.php");
+            if(isset($_SESSION['student_id']) && isset($_GET['id'])){
+                if($_SESSION['student_id'] == $_GET['id'])
+                    include("views/marks.php");
+                else 
+                    header("Location: index.php?article=journal");
+            } else 
+                header("Location: index.php?article=journal");
             break;
         
         case 'logout':
