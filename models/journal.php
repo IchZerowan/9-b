@@ -27,7 +27,7 @@
         }
         
         function get_marks($link, $id){
-            $query = mysqli_query($link, "SELECT * FROM marks WHERE student = '$id' ORDER BY id DESC");
+            $query = mysqli_query($link, "SELECT * FROM marks WHERE student = '$id' ORDER BY date DESC");
             if (!$query) 
                 die(mysqli_error($link));
             $n = mysqli_num_rows($query);

@@ -3,6 +3,7 @@ require_once("models/database.php");
 require_once("models/articles.php");
 require_once("models/accounts.php");
 require_once("models/journal.php");
+require_once("models/teacher.php");
 
 session_start();
 
@@ -121,6 +122,30 @@ elseif (isset($_GET['journal'])) {
         
         default:
             header("Location: index.php?article=journal");  
+            break;
+    }
+}
+
+elseif (isset($_GET['teacher'])) {
+    switch ($_GET['teacher']) {
+        case 'marks':
+            include("views/students.php");
+            break;
+        
+        case 'add':
+            if(isset($_GET['id'])){
+                add_mark($_GET['id']);
+            } else{
+                header("Location: index.php?article=account");
+            }
+            break;
+            
+        case 'success':
+            header("Location: index.php?teacher=marks");
+            break;
+        
+        default:
+            header("Location: index.php?article=account");
             break;
     }
 }

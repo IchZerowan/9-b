@@ -6,6 +6,8 @@
         else:
             if($_SESSION["session_username"] == "Admin")
                 include("views/admin.php");
+            elseif($_SESSION["session_username"] == "burmenko")
+                include("views/burmenko.php");
             else
                 include("views/account.php");
         endif; 

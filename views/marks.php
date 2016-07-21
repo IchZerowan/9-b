@@ -11,7 +11,8 @@
                 <div class="article">
                     <p>
                         <i><?=$a['date']?></i>:  
-                        <b>  <?=$a['mark']?></b>
+                        <b><?=$a['mark']?></b>
+                        - <?=$a['why']?>
                     </p>
                 </div>
 <?php endforeach ?>
