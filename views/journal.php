@@ -1,6 +1,6 @@
 <?php
     if(isset($_SESSION['student_id'])){
-        
+        header("Location: index.php?journal=marks&id=".$_SESSION['student_id']);
     }
 ?>
 <?php include("includes/header.html")?>

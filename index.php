@@ -111,13 +111,23 @@ elseif (isset($_GET['journal'])) {
             if (isset($_POST['password']) && isset($_GET['id'])){
                 $link = db_connect();
                 if(check_password($link, $_GET['id'], $_POST['password'])){
-                    include("views/marks.php");
+                    $_SESSION['student_id'] = $_GET['id'];
+                    header("Location: index.php?journal=marks&id=".$_GET['id']);
                 } else{
-                    header("Location: index.php?article=journal");  
+                    header("Location: index.php?article=journal&id=".$_GET['id']);  
                 }
             } else {
-                header("Location: index.php?article=journal");  
+                header("Location: index.php?article=journal");   
             }
+            break;
+            
+        case 'marks':
+            include("views/marks.php");
+            break;
+        
+        case 'logout':
+            unset($_SESSION['student_id']);
+            header("Location: index.php?article=journal"); 
             break;
         
         default:
