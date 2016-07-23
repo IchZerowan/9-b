@@ -5,3 +5,4 @@
     $link = db_connect();
     $count = get_reg($link);
 ?>
+<b><?=$count?></b>
