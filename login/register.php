@@ -10,7 +10,7 @@ if (isset($_POST["register"])) {
         $numrows   = mysql_num_rows($query);
         if ($numrows == 0) {
             $key = PASS_KEY;
-            $sql    = "INSERT INTO usertbl (full_name, email, username,password) VALUES('$full_name', '$email', '$username', '$password')";
+            $sql    = "INSERT INTO usertbl (full_name, email, username,password) VALUES('$full_name', '$email', '$username', AES_ENCRYPT('$password', '$key'))";
             $result = mysql_query($sql);
             if ($result) {
                 $message = "Account Successfully Created";
@@ -31,7 +31,7 @@ if (isset($_POST["register"])) {
 
 <!DOCTYPE html>
 	<html lang="en">
-    <?php include("includes/head.html")?>
+    <?php include("../includes/head.html")?>
 	<body>
         <?php include("includes/nav.html")?>
         <article>

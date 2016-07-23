@@ -14,20 +14,12 @@ if(isset($_POST["login"])){
         $username=htmlspecialchars($_POST['username']);
         $password=htmlspecialchars($_POST['password']);
         $key = PASS_KEY;
-        $query =mysql_query("SELECT * FROM usertbl WHERE username='$username' AND password = '$password'");
+        $query =mysql_query("SELECT * FROM usertbl WHERE username='$username' AND password = AES_ENCRYPT('$password', '$key')");
         $numrows=mysql_num_rows($query);
         if($numrows!=0)
         {
-            while($row=mysql_fetch_assoc($query))
-            {
-                $dbusername=$row['username'];
-                $dbpassword=$row['password'];
-            }
-            if($username == $dbusername && $password == $dbpassword)
-            {
-                $_SESSION['session_username']=$username;
-                header("Location: intropage.php");
-            }
+            $_SESSION['session_username']=$username;
+            header("Location: intropage.php");
         } else {
             echo  "Invalid username or password!";
         }
