@@ -1,3 +1,7 @@
+<?php
+    include("check.php");
+?>
+
 <!DOCTYPE html>
 <html>
     <head>

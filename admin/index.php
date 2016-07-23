@@ -1,8 +1,5 @@
 <?php 
-    session_start();
-    if (!(($_SESSION["session_username"] !== null) AND ($_SESSION["session_username"] == "Admin"))){
-        header("Location: ../");
-    }
+    include("check.php");
     if(isset($_POST['title'])){
         require_once("../models/database.php");
         require_once("../models/articles.php");
