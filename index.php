@@ -13,6 +13,13 @@ if(isset($_GET['action'])){
             header("Location: login/login.php");
         }
         include("views/chat.php");
+    } elseif ($_GET['action'] == 'add_article') {
+/*        if (!(($_SESSION["session_username"] !== null) AND ($_SESSION["session_username"] == "Admin"))){
+            header("Location: index.php");
+        }*/
+        $link = db_connect();
+        add_content($link, $_POST['page'], $_POST['title'], $_POST['content']);
+        header("Location: index.php?article=".$_POST['page']);
     }
 }
 
@@ -26,6 +33,18 @@ elseif(isset($_GET['article'])){
         include("views/news.php");
     elseif($article == 'chat')
         include("views/chat.php");
-} else 
-    include("views/main.php");
+}
+
+elseif (isset($_GET['admin'])) {
+    if (!(($_SESSION["session_username"] !== null) AND ($_SESSION["session_username"] == "Admin"))){
+        header("Location: index.php?article=main");
+    }
+    if($_GET['admin'] == 'new_article')
+        include("views/new_article.php");
+    elseif ($_GET['admin'] == 'status') 
+        include("views/status.php");
+} 
+
+else 
+    header("Location: index.php?article=main");
 ?>

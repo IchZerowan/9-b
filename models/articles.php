@@ -81,7 +81,7 @@
         return true;
     }
     
-    function get_reg($link) {
+    function get_usr_count($link) {
         $query = "SELECT COUNT(*) FROM usertbl;";
         $result = mysqli_query($link, $query);
         if (!$result) 
