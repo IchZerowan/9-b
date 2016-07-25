@@ -5,7 +5,6 @@
     $usr_count = get_usr_count($link);
 ?>
 
-<?php include("includes/head.html")?>
 <?php include("includes/header.html")?>
 <?php include("includes/nav.html")?>
         <article>

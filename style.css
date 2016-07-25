@@ -1,5 +1,7 @@
 body{
     background-color: white;
+    margin: 8px;
+    background-image: url("graphics/fon.jpg");
 }
 
 #navbarV {
@@ -57,11 +59,6 @@ body{
 h1 {
     text-align: center;
     color: darkblue;
-}
-
-body {
-    margin: 8px;
-    background-image: url("fon.jpg");
 }
 
 article {
