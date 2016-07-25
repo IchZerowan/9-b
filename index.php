@@ -10,7 +10,7 @@ if(isset($_GET['action'])){
             message_add($link, $_SESSION['session_username'], $_POST['message']);
         }
         elseif (!isset($_SESSION['session_username'])) {
-            header("Location: login/login.php");
+            header("Location: index.php?action=login");
         }
         header("Location: index.php?article=chat");
     } elseif ($_GET['action'] == 'add_article') {
