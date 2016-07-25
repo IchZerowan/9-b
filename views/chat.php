@@ -3,7 +3,7 @@
         <article>
             <section>
                 <h2>Чат</h2>
-                <form method="post", action="index.php?action=add">
+                <form method="post", action="index.php?action=add_message">
                     <label>Сообщение<br>
                         <textarea name="message" class="textarea"required></textarea>
                     </label>

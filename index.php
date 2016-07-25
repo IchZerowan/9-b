@@ -4,7 +4,7 @@ require_once("models/articles.php");
 session_start();
 
 if(isset($_GET['action'])){
-    if($_GET['action'] == 'add') {
+    if($_GET['action'] == 'add_message') {
         if(!empty($_POST) && isset($_SESSION['session_username'])) {
             $link = db_connect();
             message_add($link, $_SESSION['session_username'], $_POST['message']);
@@ -12,14 +12,17 @@ if(isset($_GET['action'])){
         elseif (!isset($_SESSION['session_username'])) {
             header("Location: login/login.php");
         }
-        include("views/chat.php");
+        header("Location: index.php?article=chat");
     } elseif ($_GET['action'] == 'add_article') {
-/*        if (!(($_SESSION["session_username"] !== null) AND ($_SESSION["session_username"] == "Admin"))){
-            header("Location: index.php");
-        }*/
         $link = db_connect();
         add_content($link, $_POST['page'], $_POST['title'], $_POST['content']);
         header("Location: index.php?article=".$_POST['page']);
+    } elseif ($_GET['action'] == 'register') {
+        include("models/register.php");
+    } elseif ($_GET['action'] == 'login') {
+        include('models/login.php');
+    } elseif($_GET['action'] == 'logout') {
+        include("models/logout.php");
     }
 }
 
@@ -33,6 +36,9 @@ elseif(isset($_GET['article'])){
         include("views/news.php");
     elseif($article == 'chat')
         include("views/chat.php");
+    elseif ($article == 'account') {
+        include("models/account.php");
+    }
 }
 
 elseif (isset($_GET['admin'])) {
