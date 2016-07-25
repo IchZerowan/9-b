@@ -35,6 +35,10 @@ if(isset($_GET['action'])){
         case 'logout':
             logout();
             break;
+            
+        default:
+            header("Location: index.php?article=main");  
+            break;
     }
 }
 
@@ -60,6 +64,10 @@ elseif(isset($_GET['article'])){
         case 'account':
             account_info();
             break;
+            
+        default:
+            header("Location: index.php?article=main");  
+            break;
     }
 }
 
@@ -75,6 +83,10 @@ elseif (isset($_GET['admin'])) {
         
         case 'status':
             include("views/status.php");
+            break;
+            
+        default:
+            header("Location: index.php?article=main");  
             break;
     }
 } 
