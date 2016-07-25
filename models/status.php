@@ -1,6 +1,6 @@
 <?php
-    function get_usr_count($link) {
-        $query = "SELECT COUNT(*) FROM usertbl;";
+    function get_count($link, $table) {
+        $query = "SELECT COUNT(*) FROM ".$table.";";
         $result = mysqli_query($link, $query);
         if (!$result) 
             die(mysqli_error($link));

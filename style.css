@@ -89,10 +89,13 @@ hr{
 }
 
 .btn{
+    padding: 2px;
+    margin: 2px;
     background-color: darkblue;
     color: white;
     border: 1 solid black;
     border-radius: 20px 5px;
+    text-decoration: none;
 }
 
 .btn:hover {
