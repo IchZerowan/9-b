@@ -2,6 +2,7 @@
 require_once("models/database.php"); 
 require_once("models/articles.php");
 require_once("models/accounts.php");
+require_once("models/journal.php");
 
 session_start();
 
@@ -65,6 +66,10 @@ elseif(isset($_GET['article'])){
             account_info();
             break;
             
+        case 'journal':
+            include("views/journal.php");
+            break;
+            
         default:
             header("Location: index.php?article=main");  
             break;
@@ -90,6 +95,35 @@ elseif (isset($_GET['admin'])) {
             break;
     }
 } 
+
+elseif (isset($_GET['journal'])) {
+    switch ($_GET['journal']) {
+        case 'student':
+            if (isset($_GET['id'])){
+                include("views/password.php");
+            } else {
+                header("Location: index.php?article=journal");  
+            }
+            break;
+        
+        case 'check_password':
+            if (isset($_POST['password']) && isset($_GET['id'])){
+                $link = db_connect();
+                if(check_password($link, $_GET['id'], $_POST['password'])){
+                    include("views/marks.php");
+                } else{
+                    header("Location: index.php?article=journal");  
+                }
+            } else {
+                header("Location: index.php?article=journal");  
+            }
+            break;
+        
+        default:
+            header("Location: index.php?article=journal");  
+            break;
+    }
+}
 
 else {
     header("Location: index.php?article=main");    
