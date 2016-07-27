@@ -5,11 +5,11 @@
             header("location:index.php?action=login");
         else:
             if($_SESSION["session_username"] == "Admin")
-                include("views/admin.php");
+                include("views/accounts/admin.php");
             elseif($_SESSION["session_username"] == "burmenko")
-                include("views/burmenko.php");
+                include("views/accounts/burmenko.php");
             else
-                include("views/account.php");
+                include("views/accounts/account.php");
         endif; 
     }
     
@@ -40,7 +40,7 @@
             }
         }
         
-        include("views/login.php");
+        include("views/accounts/login.php");
     }
     
     
@@ -84,6 +84,6 @@
             echo "<p class=\"error\">" . "MESSAGE: ". $message . "</p>";
         } 
         
-        include("views/register.php");
+        include("views/accounts/register.php");
     }
 ?>

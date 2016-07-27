@@ -41,4 +41,17 @@
             }
             return $marks;
         }
+        
+        function get_average($link, $id, $from, $to){
+             $query = mysqli_query($link, "SELECT AVG(mark) FROM marks WHERE student=".$_GET['id']." AND 'date' BETWEEN $from AND $to");
+            if ($query) {
+                $row = mysqli_fetch_array($query);
+                if($row[0] ==  NULL)
+                    $row[0] = 'Не удалось получить средний бал!';
+                return $row[0];
+            } else {
+                echo "Failed to get data information!";
+                return 'Не удалось получить средний бал!';
+            }
+        }
 ?>

@@ -48,19 +48,19 @@ elseif(isset($_GET['article'])){
     
     switch ($_GET['article']) {
         case 'main':
-            include("views/main.php");
+            include("views/articles/main.php");
             break;
         
         case 'album':
-            include("views/album.php");
+            include("views/articles/album.php");
             break;
             
         case 'news':
-            include("views/news.php");
+            include("views/articles/news.php");
             break;
             
         case 'chat':
-            include("views/chat.php");
+            include("views/articles/chat.php");
             break;
             
         case 'account':
@@ -84,11 +84,11 @@ elseif (isset($_GET['admin'])) {
     
     switch ($_GET['admin']) {
         case 'new_article':
-            include("views/new_article.php");
+            include("views/admin/new_article.php");
             break;
         
         case 'status':
-            include("views/status.php");
+            include("views/admin/status.php");
             break;
             
         default:
