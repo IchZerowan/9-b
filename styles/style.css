@@ -4,6 +4,7 @@ body{
     background-image: url("../graphics/fon.jpg");
 }
 
+/*Navigation*/
 #navbarV {
     margin: 10px;
     padding: 0;
@@ -56,18 +57,10 @@ body{
     display: inline; 
 }
 
+/*Headings*/
 h1 {
     text-align: center;
     color: darkblue;
-}
-
-article {
-    display: inline-block;
-    width: 70%;
-}
-
-nav {
-    float: left;
 }
 
 h2 {
@@ -76,18 +69,39 @@ h2 {
     color: #000066;
 }
 
-img{
-    width: 200px;
-    border: 2px solid black;
+h3 {
+    text-align: center;
+    color: darkblue;
+}
+
+/*Blocks*/
+article {
+    display: inline-block;
+    width: 70%;
+}
+
+form {
+    border: 2px solid darkblue;
     border-radius: 20px 5px;
+    padding: 10px;
+    margin: 10px;
 }
 
-hr{
-    background-color: black;
-    color: black;
-    height: 1px;
+nav {
+    float: left;
 }
 
+table{
+    width: 100%;
+    text-align: center;
+}
+
+.textarea{
+    width: 500px;
+    height: 150px;
+}
+
+/*buttons*/
 .btn{
     padding: 2px;
     margin: 2px;
@@ -104,27 +118,20 @@ hr{
     color: white;
 }
 
-form {
-    border: 2px solid darkblue;
+
+/*Graphics*/
+img{
+    width: 200px;
+    border: 2px solid black;
     border-radius: 20px 5px;
-    padding: 10px;
-    margin: 10px;
 }
 
 .photo{
     float: left;
 }
 
-h3{
-    color: darkblue;
-}
-
-.textarea{
-    width: 500px;
-    height: 150px;
-}
-
-table{
-    width: 100%;
-    text-align: center;
+hr{
+    background-color: black;
+    color: black;
+    height: 1px;
 }

@@ -2,7 +2,7 @@
 <?php include("includes/nav.html")?>
         <article>
             <section>
-                <h1>Регистрация</h1>
+                <h2>Регистрация</h2>
                 <form action="index.php?action=register" id="registerform" method="post"name="registerform">
                     <p><b>Используйте латиницу!</b></p>
                     <p>

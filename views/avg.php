@@ -2,6 +2,7 @@
 <?php include("includes/nav.html");?>
         <article>
             <section>
+                <h2>Выберите период</h2>
                 <form method="post", action=<?="index.php?journal=average&id=".$_GET['id']?>>
                     <label>С<br>
                         <input type="date" name="from" required>
