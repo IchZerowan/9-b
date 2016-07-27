@@ -136,6 +136,16 @@ elseif (isset($_GET['journal'])) {
             header("Location: index.php?article=journal"); 
             break;
         
+        case 'average':
+            if(isset($_SESSION['student_id']) && isset($_GET['id'])){
+                if($_SESSION['student_id'] == $_GET['id'])
+                    include("models/avg.php");
+                else 
+                    header("Location: index.php?article=journal");
+            } else 
+                header("Location: index.php?article=journal");
+            break;
+        
         default:
             header("Location: index.php?article=journal");  
             break;
