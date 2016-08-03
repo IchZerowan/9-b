@@ -1,4 +1,6 @@
 <?php
+ini_set("display_errors", true);
+error_reporting(E_ALL);
 require_once("models/database.php"); 
 require_once("models/articles.php");
 require_once("models/accounts.php");
@@ -68,7 +70,7 @@ elseif(isset($_GET['article'])){
             break;
             
         case 'journal':
-            include("views/journal.php");
+            include("views/journal/journal.php");
             break;
             
         default:
@@ -101,7 +103,7 @@ elseif (isset($_GET['journal'])) {
     switch ($_GET['journal']) {
         case 'student':
             if (isset($_GET['id'])){
-                include("views/password.php");
+                include("views/journal/password.php");
             } else {
                 header("Location: index.php?article=journal");  
             }
@@ -124,7 +126,7 @@ elseif (isset($_GET['journal'])) {
         case 'marks':
             if(isset($_SESSION['student_id']) && isset($_GET['id'])){
                 if($_SESSION['student_id'] == $_GET['id'])
-                    include("views/marks.php");
+                    include("views/journal/marks.php");
                 else 
                     header("Location: index.php?article=journal");
             } else 
@@ -158,7 +160,7 @@ elseif (isset($_GET['teacher'])) {
     }
     switch ($_GET['teacher']) {
         case 'marks':
-            include("views/students.php");
+            include("views/teacher/students.php");
             break;
         
         case 'add':

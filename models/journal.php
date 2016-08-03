@@ -17,6 +17,7 @@
         }
         
         function check_password($link, $id, $password){
+            $password = addslashes($password);
             $key = PASS_KEY;
             $query = mysql_query("SELECT * FROM students WHERE id = '$id' AND password = AES_ENCRYPT('$password', '$key')");
             $numrows=mysql_num_rows($query);

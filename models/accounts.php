@@ -23,8 +23,8 @@
         if(isset($_POST["login"])){
 
             if(!empty($_POST['username']) && !empty($_POST['password'])) {
-                $username=htmlspecialchars($_POST['username']);
-                $password=htmlspecialchars($_POST['password']);
+                $username=addslashes($_POST['username']);
+                $password=addslashes($_POST['password']);
                 $key = PASS_KEY;
                 $query = mysql_query("SELECT * FROM usertbl WHERE username='$username' AND password = AES_ENCRYPT('$password', '$key')");
                 $numrows=mysql_num_rows($query);
@@ -57,10 +57,10 @@
     function register(){
         if (isset($_POST["register"])) {
             if (!empty($_POST['full_name']) && !empty($_POST['email']) && !empty($_POST['username']) && !empty($_POST['password'])) {
-                $full_name = htmlspecialchars($_POST['full_name']);
-                $email     = htmlspecialchars($_POST['email']);
-                $username  = htmlspecialchars($_POST['username']);
-                $password  = htmlspecialchars($_POST['password']);
+                $full_name = addslashes($_POST['full_name']);
+                $email     = addslashes($_POST['email']);
+                $username  = addslashes($_POST['username']);
+                $password  = addslashes($_POST['password']);
                 $query     = mysql_query("SELECT * FROM usertbl WHERE username='$username'") or die(mysql_error());
                 $numrows   = mysql_num_rows($query);
                 if ($numrows == 0) {
