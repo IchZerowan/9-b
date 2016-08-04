@@ -9,6 +9,7 @@ require_once("models/accounts.php");
 require_once("models/journal.php");
 require_once("models/teacher.php");
 require_once("models/functions.php");
+require_once("models/avg.php");
 
 session_start();
 
@@ -150,7 +151,7 @@ elseif (isset($_GET['journal'])) {
         case 'average':
             if(isset($_SESSION['student_id']) && isset($_GET['id'])){
                 if($_SESSION['student_id'] == $_GET['id'])
-                    include("models/avg.php");
+                    avg();
                 else 
                     apologize("Доступ запрещен!");
             } else 
