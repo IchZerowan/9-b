@@ -6,6 +6,7 @@ require_once("models/articles.php");
 require_once("models/accounts.php");
 require_once("models/journal.php");
 require_once("models/teacher.php");
+require_once("models/functions.php");
 
 session_start();
 
