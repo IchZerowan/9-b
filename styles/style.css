@@ -68,9 +68,18 @@ h2 {
     color: #000066;
 }
 
+h2.err {
+    color: red;
+}
+
 h3 {
     text-align: center;
     color: darkblue;
+}
+
+h3.err{
+        color: orangered;
+    font-weight: bold;
 }
 
 /*Blocks*/

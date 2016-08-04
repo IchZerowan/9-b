@@ -10,7 +10,7 @@
                 if ($query) {
                     header("Location: index.php?teacher=success");
                 } else {
-                    echo "Failed to insert data information!";
+                    apologize("Не удалось добавить оценку в базу данных");
                 }
             } else {
                 include("views/teacher/add_mark.php");

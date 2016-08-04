@@ -34,10 +34,10 @@
                     $_SESSION['session_username']=$username;
                     header("Location: index.php?article=account");
                 } else {
-                    echo  "Invalid username or password!";
+                    apologize("Неверное имя пользователя или пароль");
                 }
             } else {
-                $message = "All fields are required!";
+                apologize("Все поля должны быть заполнены!");
             }
         }
         
@@ -71,21 +71,17 @@
                     $link = db_connect();
                     $result = mysqli_query($link, $sql);
                     if ($result) {
-                        $message = "Account Successfully Created";
                         header("Location: index.php?article=account");
                     } else {
-                        $message = "Failed to insert data information!";
+                        apologize("Невозможно создать аккаунт! Повторите попытку позже или обратитесь к администратору");
                     }
                 } else {
-                    $message = "That username already exists! Please try another one!";
+                    apologize("Имя пользователя уже занято!");
                 }
             } else {
-                $message = "All fields are required!";
+                apologize("Все поля должны быть заполнены!");
             }
         }
-        if (!empty($message)) {
-            echo "<p class=\"error\">" . "MESSAGE: ". $message . "</p>";
-        } 
         
         include("views/accounts/register.php");
     }

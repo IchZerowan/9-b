@@ -1,6 +1,8 @@
 <?php
+
 ini_set("display_errors", true);
 error_reporting(E_ALL);
+
 require_once("models/database.php"); 
 require_once("models/articles.php");
 require_once("models/accounts.php");
@@ -18,9 +20,9 @@ if(isset($_GET['action'])){
                 message_add($link, $_SESSION['session_username'], $_POST['message']);
             }
             elseif (!isset($_SESSION['session_username'])) {
-                header("Location: index.php?action=login");
+                apologize("Войдите или зарегестрируйтесь, чтобы отправлять сообщения");
             }
-            header("Location: index.php?article=chat");
+            apologize("Неверный запрос!");
             break;
         
         case 'add_article':
@@ -42,7 +44,9 @@ if(isset($_GET['action'])){
             break;
             
         default:
-            header("Location: index.php?article=main");  
+            header('HTTP/1.1 404 Not Found');
+            header('Status: 404 Not Found');
+            apologize("Страница не найдена!");
             break;
     }
 }
@@ -75,14 +79,16 @@ elseif(isset($_GET['article'])){
             break;
             
         default:
-            header("Location: index.php?article=main");  
+            header('HTTP/1.1 404 Not Found');
+            header('Status: 404 Not Found');
+            apologize("Страница не найдена!"); 
             break;
     }
 }
 
 elseif (isset($_GET['admin'])) {
-    if (!(($_SESSION["session_username"] !== null) AND ($_SESSION["session_username"] == "Admin"))){
-        header("Location: index.php?article=main");
+    if (!(isset($_SESSION["session_username"]) AND ($_SESSION["session_username"] == "Admin"))){
+        apologize("Доступ запрещен!");
     }
     
     switch ($_GET['admin']) {
@@ -95,7 +101,9 @@ elseif (isset($_GET['admin'])) {
             break;
             
         default:
-            header("Location: index.php?article=main");  
+            header('HTTP/1.1 404 Not Found');
+            header('Status: 404 Not Found');
+            apologize("Страница не найдена!");
             break;
     }
 } 
@@ -106,7 +114,7 @@ elseif (isset($_GET['journal'])) {
             if (isset($_GET['id'])){
                 include("views/journal/password.php");
             } else {
-                header("Location: index.php?article=journal");  
+                apologize("Неверный запрос!"); 
             }
             break;
         
@@ -117,10 +125,10 @@ elseif (isset($_GET['journal'])) {
                     $_SESSION['student_id'] = $_GET['id'];
                     header("Location: index.php?journal=marks&id=".$_GET['id']);
                 } else{
-                    header("Location: index.php?article=journal&id=".$_GET['id']);  
+                    apologize("Неверный пароль!");
                 }
             } else {
-                header("Location: index.php?article=journal");   
+                apologize("Неверный запрос!");
             }
             break;
             
@@ -129,9 +137,9 @@ elseif (isset($_GET['journal'])) {
                 if($_SESSION['student_id'] == $_GET['id'])
                     include("views/journal/marks.php");
                 else 
-                    header("Location: index.php?article=journal");
+                    apologize("Доступ запрещен!");
             } else 
-                header("Location: index.php?article=journal");
+                apologize("Неверный запрос!");
             break;
         
         case 'logout':
@@ -144,20 +152,22 @@ elseif (isset($_GET['journal'])) {
                 if($_SESSION['student_id'] == $_GET['id'])
                     include("models/avg.php");
                 else 
-                    header("Location: index.php?article=journal");
+                    apologize("Доступ запрещен!");
             } else 
-                header("Location: index.php?article=journal");
+                apologize("Неверный запрос!");
             break;
         
         default:
-            header("Location: index.php?article=journal");  
+            header('HTTP/1.1 404 Not Found');
+            header('Status: 404 Not Found');
+            apologize("Страница не найдена!");
             break;
     }
 }
 
 elseif (isset($_GET['teacher'])) {
     if (!(($_SESSION["session_username"] !== null) AND ($_SESSION["session_username"] == "burmenko"))){
-        header("Location: index.php?article=main");
+        apologize("Доступ запрещен!");
     }
     switch ($_GET['teacher']) {
         case 'marks':
@@ -168,7 +178,7 @@ elseif (isset($_GET['teacher'])) {
             if(isset($_GET['id'])){
                 add_mark($_GET['id']);
             } else{
-                header("Location: index.php?article=account");
+                apologize("Неверный запрос!");
             }
             break;
             
@@ -177,13 +187,17 @@ elseif (isset($_GET['teacher'])) {
             break;
         
         default:
-            header("Location: index.php?article=account");
+            header('HTTP/1.1 404 Not Found');
+            header('Status: 404 Not Found');
+            apologize("Страница не найдена!");
             break;
     }
 }
 
 else {
-    header("Location: index.php?article=main");    
+    header('HTTP/1.1 404 Not Found');
+    header('Status: 404 Not Found');
+    apologize("Страница не найдена!");  
 }
 
 ?>

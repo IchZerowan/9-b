@@ -51,7 +51,6 @@
                     $row[0] = 'Не удалось получить средний бал!';
                 return $row[0];
             } else {
-                echo "Failed to get data information!";
                 return 'Не удалось получить средний бал!';
             }
         }
