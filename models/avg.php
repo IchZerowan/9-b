@@ -5,9 +5,9 @@ if (isset($_POST["avg"])) {
         $avg = get_average($link, $_GET['id'], $_POST['from'], $_POST['to']);
         include("views/journal/show_avg.php");
     } else {
-        include("views/journal/avg.php");
+        apologize("Все поля должны быть заполнены!");
     }
 } else {
-    include("views/journal/avg.php");
+    apologize("Неверный запрос");
 }
 ?>

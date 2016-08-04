@@ -1,16 +1,18 @@
 <?php
     
     function account_info(){
-        if(!isset($_SESSION["session_username"])):
+        if(!isset($_SESSION["session_username"])){
             header("location:index.php?action=login");
-        else:
+        }
+        else
+        {
             if($_SESSION["session_username"] == "Admin")
                 include("views/accounts/admin.php");
             elseif($_SESSION["session_username"] == "burmenko")
                 include("views/accounts/burmenko.php");
             else
                 include("views/accounts/account.php");
-        endif; 
+        }
     }
     
     
