@@ -26,8 +26,9 @@
                 $username=addslashes($_POST['username']);
                 $password=addslashes($_POST['password']);
                 $key = PASS_KEY;
-                $query = mysql_query("SELECT * FROM usertbl WHERE username='$username' AND password = AES_ENCRYPT('$password', '$key')");
-                $numrows=mysql_num_rows($query);
+                $link = db_connect();
+                $query = mysqli_query($link, "SELECT * FROM usertbl WHERE username='$username' AND password = AES_ENCRYPT('$password', '$key')");
+                $numrows=mysqli_num_rows($query);
                 if($numrows!=0)
                 {
                     $_SESSION['session_username']=$username;
@@ -61,12 +62,14 @@
                 $email     = addslashes($_POST['email']);
                 $username  = addslashes($_POST['username']);
                 $password  = addslashes($_POST['password']);
-                $query     = mysql_query("SELECT * FROM usertbl WHERE username='$username'") or die(mysql_error());
-                $numrows   = mysql_num_rows($query);
+                $link = db_connect();
+                $query     = mysqli_query($link, "SELECT * FROM usertbl WHERE username='$username'") or die(mysql_error());
+                $numrows   = mysqli_num_rows($query);
                 if ($numrows == 0) {
                     $key = PASS_KEY;
                     $sql    = "INSERT INTO usertbl (full_name, email, username,password) VALUES('$full_name', '$email', '$username', AES_ENCRYPT('$password', '$key'))";
-                    $result = mysql_query($sql);
+                    $link = db_connect();
+                    $result = mysqli_query($link, $sql);
                     if ($result) {
                         $message = "Account Successfully Created";
                         header("Location: index.php?article=account");
