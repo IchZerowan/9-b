@@ -1,7 +1,7 @@
 <?php include("includes/header.html")?>
 <?php include("includes/nav.html")?>
-        <article>
-            <section>
+        <main>
+            <article>
                 <h2>Добавление оценки</h2>
                 <form method="post", action=<?="index.php?teacher=add&id=".$id?>>
                     <label>Оценка<br>
@@ -30,6 +30,6 @@
                     </p>
                 </div>
 <?php endforeach ?>
-            </section>
-        </article>
+            </article>
+        </main>
 <?php include("includes/footer.html")?>

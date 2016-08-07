@@ -1,7 +1,7 @@
 <?php include("includes/header.html")?>
 <?php include("includes/nav.html")?>
-        <article>
-            <section>
+        <main>
+            <article>
                 <h2>Проверка пароля</h2>
                 <form method="post" action=<?="index.php?journal=check_password&id=".$_GET['id']?>>
                     <label>Пароль<br>
@@ -13,6 +13,6 @@
                     </label>
                     <br>
                 </form>
-            </section>
-        </article>
+            </article>
+        </main>
 <?php include("includes/footer.html")?>

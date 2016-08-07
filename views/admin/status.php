@@ -1,7 +1,7 @@
 <?php include("includes/header.html")?>
 <?php include("includes/nav.html")?>
-        <article>
-            <section>
+        <main>
+            <article>
                 <h2>Статистика</h2>
 <?php 
     include("models/status.php");
@@ -11,6 +11,6 @@
                 <p>Выложено <i><?=get_count($link, 'main') + get_count($link, 'news')?></i> статей;</p>
                 <p>Отправлено <i><?=get_count($link, 'messages')?></i> сообщений;</p>
                 <p>Выложено <i><?=get_count($link, 'album')?></i> фотографий</p>
-            </section>
-        </article>
+            </article>
+        </main>
 <?php include("includes/footer.html")?>

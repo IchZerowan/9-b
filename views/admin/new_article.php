@@ -1,7 +1,7 @@
 <?php include("includes/header.html")?>
 <?php include("includes/nav.html")?>
-        <article>
-            <section>
+        <main>
+            <article>
                 <h2>Добавление статьи</h2>
                 <form method="post", action="index.php?action=add_article">
                     <label>На страницу<br>
@@ -19,7 +19,7 @@
                     <label>
                         <input type="submit" value="Сохранить" class="btn" required>
                     </label>
-                </form>
-            </section>
+                </article>
+            </main>
         </article>
 <?php include("includes/footer.html")?>

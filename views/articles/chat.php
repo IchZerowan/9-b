@@ -1,7 +1,7 @@
 <?php include("includes/header.html")?>
 <?php include("includes/nav.html")?>
-        <article>
-            <section>
+        <main>
+            <article>
                 <h2>Чат</h2>
                 <form method="post", action="index.php?action=add_message">
                     <label>Сообщение<br>
@@ -23,6 +23,6 @@
                     <p><?=$a['message']?></p>
                 </div>
 <?php endforeach ?>
-            </section>
-        </article>
+            <article>
+        <main>
 <?php include("includes/footer.html")?>

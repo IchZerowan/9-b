@@ -1,7 +1,7 @@
 <?php include("includes/header.html");?>
 <?php include("includes/nav.html");?>
-        <article>
-            <section>
+        <main>
+            <article>
                 <h2>Выберите период</h2>
                 <form method="post", action=<?="index.php?journal=average&id=".$_GET['id']?>>
                     <label>С<br>
@@ -14,6 +14,6 @@
                         <input name="avg" type="submit" value="Узнать" class="btn" required>
                     </label>
                 </form>
-            </section>
-        </article>
+            </article>
+        </main>
 <?php include("includes/footer.html");?>

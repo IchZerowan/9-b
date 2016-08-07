@@ -1,7 +1,7 @@
 <?php include("includes/header.html")?>
 <?php include("includes/nav.html")?>
-        <article>
-            <sextion>
+        <main>
+            <article>
                 <h2>Вход</h2>
                 <form method="post" action="index.php?action=login">
                     <label>Имя пользователя<br>
@@ -17,7 +17,7 @@
                     </label>
                     <br>
 	                Еще не зарегистрированы?<a href="index.php?action=register">Регистрация</a>!
-                </form>
-            </section>
+                </article>
+            </main>
         </aricle>
 <?php include("includes/footer.html")?>

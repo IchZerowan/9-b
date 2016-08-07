@@ -1,7 +1,7 @@
 <?php include("includes/header.html")?>
 <?php include("includes/nav.html")?>
-        <article>
-            <section>
+        <main>
+            <article>
                 <h2>Регистрация</h2>
                 <form action="index.php?action=register" id="registerform" method="post"name="registerform">
                     <p><b>Используйте латиницу!</b></p>
@@ -23,7 +23,7 @@
                     </p>
                     <p><input class="btn" id="register" name= "register" type="submit" value="Зарегистрироваться"></p>
                     <p>Уже зарегистрированы? <a href= "index.php?action=login">Введите имя пользователя</a>!</p>
-                </form>
-            </section>
+                </article>
+            </main>
         </article>
 <?php include("includes/footer.html")?>

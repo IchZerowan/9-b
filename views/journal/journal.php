@@ -6,8 +6,8 @@
 
 <?php include("includes/header.html")?>
 <?php include("includes/nav.html")?>
-        <article>
-            <section>
+        <main>
+            <article>
                 <h2>Журнал учителя Бурменко В.В.</h2>
                 <table border="1">
                     <tr>
@@ -55,6 +55,6 @@
                         </td>
                     </tr>
                 </table> 
-            </section>
-        </article>
+            </article>
+        </main>
 <?php include("includes/footer.html")?>

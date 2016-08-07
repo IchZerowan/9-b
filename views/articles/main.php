@@ -1,7 +1,7 @@
 <?php include("includes/header.html")?>
 <?php include("includes/nav.html")?>
-        <article>
-            <section>
+        <main>
+            <article>
                 <h2>Главная</h2>
 <?php
     $link = db_connect();
@@ -14,6 +14,6 @@
                     <p><?=$a['content']?></p>
                 </div>
 <?php endforeach ?>
-            </section>
-        </article>
+            </article>
+        </main>
 <?php include("includes/footer.html")?>
