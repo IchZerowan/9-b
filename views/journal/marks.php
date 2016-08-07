@@ -3,8 +3,8 @@
         <main>
             <article>
                 <h2>Оценки ученика</h2>
-                <a class="btn"href="index.php?journal=logout">Выход</a>
-                <a class="btn"href=<?="index.php?journal=average&id=".$_GET['id']?>>Подсчитать средний бал</a>
+                <a class="btn" href="index.php?journal=logout">Выход</a>
+                <a class="btn" href=<?="\"index.php?journal=average&id=".$_GET['id']."\""?>>Подсчитать средний бал</a>
 <?php
     $link = db_connect();
     $marks = get_marks($link, $_GET['id']); 
@@ -15,6 +15,7 @@
                         <i><?=$a['date']?></i>:  
                         <b><?=$a['mark']?></b>
                         - <?=$a['why']?>
+                    
                     </p>
                 </div>
 <?php endforeach ?>

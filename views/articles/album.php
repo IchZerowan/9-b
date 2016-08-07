@@ -8,8 +8,8 @@
     $article = get_photos($link);
     foreach($article as $a):
 ?>
-                <div class="photo">
-                    <a href='<?="album/".$a['name']?>'><img src=<?="album/".$a['name']?>></a>
+                <div>
+                    <a href='<?="album/".$a['name']?>'><img src=<?="album/".$a['name']?> alt=<?=$a['name']?>></a>
                     <br>
                     <p><?=$a['name']?></p>
                 </div>

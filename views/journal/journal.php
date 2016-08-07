@@ -9,7 +9,7 @@
         <main>
             <article>
                 <h2>Журнал учителя Бурменко В.В.</h2>
-                <table border="1">
+                <table>
                     <tr>
                         <td>10-А</td>
                         <td>10-Б</td>
@@ -23,7 +23,7 @@
     $students = get_students($link, 0);
     foreach($students as $a): 
 ?>
-                            <p><a href=<?="index.php?journal=student&id=".$a['id']?>><?=$a['name']?></a></p>
+                            <p><a href=<?="\"index.php?journal=student&id=".$a['id']."\""?>><?=$a['name']?></a></p>
 <?php endforeach ?>
                         </td>
                         <td>
@@ -32,7 +32,7 @@
     $students = get_students($link, 1);
     foreach($students as $a): 
 ?>
-                            <p><a href=<?="index.php?journal=student&id=".$a['id']?>><?=$a['name']?></a></p>
+                            <p><a href=<?="\"index.php?journal=student&id=".$a['id']."\""?>><?=$a['name']?></a></p>
 <?php endforeach ?>
                         </td>
                         <td>
@@ -41,7 +41,7 @@
     $students = get_students($link, 2);
     foreach($students as $a): 
 ?>
-                            <p><a href=<?="index.php?journal=student&id=".$a['id']?>><?=$a['name']?></a></p>
+                            <p><a href=<?="\"index.php?journal=student&id=".$a['id']."\""?>><?=$a['name']?></a></p>
 <?php endforeach ?>
                         </td>
                         <td>
@@ -50,7 +50,7 @@
     $students = get_students($link, 3);
     foreach($students as $a): 
 ?>
-                            <p><a href=<?="index.php?journal=student&id=".$a['id']?>><?=$a['name']?></a></p>
+                            <p><a href=<?="\"index.php?journal=student&id=".$a['id']."\""?>><?=$a['name']?></a></p>
 <?php endforeach ?>
                         </td>
                     </tr>

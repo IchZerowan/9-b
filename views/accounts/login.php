@@ -5,11 +5,11 @@
                 <h2>Вход</h2>
                 <form method="post" action="index.php?action=login">
                     <label>Имя пользователя<br>
-                        <input type="text" name="username"size="20" value="">
+                        <input type="text" name="username" size="20" value="">
                     </label>
                     <br>
                     <label>Пароль<br>
-                        <input type="password" name="password"size="20" value="">
+                        <input type="password" name="password" size="20" value="">
                     </label> 
                     <br>
                     <label>

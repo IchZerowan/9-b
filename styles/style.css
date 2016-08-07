@@ -3,143 +3,145 @@ body{
     background-image: url("../graphics/fon.jpg");
 }
 
-/*Navigation*/
-#navbarV {
-    margin: 10px;
-    padding: 0;
-    list-style-type: none;
-    width: 150px;
-    border: 2px solid #0066FF;
-    border-radius: 20px 5px;
-    text-align: center;
-    background-color: #33ADFF;
-}
+/*Navbars*/
+    #navbarV {
+        margin: 10px;
+        padding: 0;
+        list-style-type: none;
+        width: 150px;
+        border: 2px solid #0066FF;
+        border-radius: 20px 5px;
+        text-align: center;
+        background-color: #33ADFF;
+    }
 
-#navbarV a {
-    color: #fff;
-    padding: 5px 10px;
-    text-decoration: none;
-    font-weight: bold;
-    display: block;  
-}
+    #navbarV a {
+        color: #fff;
+        padding: 5px 10px;
+        text-decoration: none;
+        font-weight: bold;
+        display: block;  
+    }
 
-#navbarV a:hover {
-    border-radius: 20px 5px;
-    background-color: #0066FF;
-}
+    #navbarV a:hover {
+        border-radius: 20px 5px;
+        background-color: #0066FF;
+    }
 
-#navbarH {
-    margin: 10px;
-    padding: 0;
-    list-style-type: none;
-    border: 2px solid #0066FF;
-    border-radius: 20px 5px;
-    width: 550px;
-    text-align: center;
-    background-color: #33ADFF;
-    width: auto;
-}
-#navbarH a {
-    color: #fff;
-    padding: 5px 10px;
-    text-decoration: none;
-    font-weight: bold;
-    display: inline-block;
-    width: 120px;
-}
-#navbarH a:hover {
-    border-radius: 20px 5px;
-    background-color: #0066FF;
-}
+    #navbarH {
+        margin: 10px;
+        padding: 0;
+        list-style-type: none;
+        border: 2px solid #0066FF;
+        border-radius: 20px 5px;
+        width: 550px;
+        text-align: center;
+        background-color: #33ADFF;
+        width: auto;
+    }
+    #navbarH a {
+        color: #fff;
+        padding: 5px 10px;
+        text-decoration: none;
+        font-weight: bold;
+        display: inline-block;
+        width: 120px;
+    }
+    #navbarH a:hover {
+        border-radius: 20px 5px;
+        background-color: #0066FF;
+    }
 
-#navbarH li {
-    display: inline; 
-}
+    #navbarH li {
+        display: inline; 
+    }
 
 /*Headings*/
-h1 {
-    text-align: center;
-    color: darkblue;
-}
+    h1 {
+        text-align: center;
+        color: darkblue;
+    }
 
-h2 {
-    text-align: center;
-    margin: 10px;
-    color: #000066;
-}
+    h2 {
+        text-align: center;
+        margin: 10px;
+        color: #000066;
+    }
 
-h2.err {
-    color: red;
-}
+    h2.err {
+        color: red;
+    }
 
-h3 {
-    text-align: center;
-    color: darkblue;
-}
+    h3 {
+        text-align: center;
+        color: darkblue;
+    }
 
-h3.err{
-        color: orangered;
-    font-weight: bold;
-}
+    h3.err{
+            color: orangered;
+        font-weight: bold;
+    }
 
 /*Blocks*/
-article {
-    display: inline-block;
-    width: 70%;
-}
+    article {
+        display: inline-block;
+        width: 70%;
+    }
 
-form {
-    border: 2px solid darkblue;
-    border-radius: 20px 5px;
-    padding: 10px;
-    margin: 10px;
-}
+    form {
+        border: 2px solid darkblue;
+        border-radius: 20px 5px;
+        padding: 10px;
+        margin: 10px;
+    }
 
-nav {
-    float: left;
-}
+    nav {
+        float: left;
+    }
 
-table{
-    width: 100%;
-    text-align: center;
-}
+    table, td, th 
+    { 
+        border: 1px solid gray;
+    }
 
-.textarea{
-    width: 500px;
-    height: 150px;
-}
+    table{
+        width: 100%;
+        text-align: center;
+    }
+    
+    .textarea{
+        width: 500px;
+        height: 150px;
+    }
 
 /*buttons*/
-.btn{
-    padding: 2px;
-    margin: 2px;
-    background-color: darkblue;
-    color: white;
-    border: 1 solid black;
-    border-radius: 20px 5px;
-    text-decoration: none;
-}
+    .btn{
+        padding: 2px;
+        margin: 2px;
+        background-color: darkblue;
+        color: white;
+        border: 1 solid black;
+        border-radius: 20px 5px;
+        text-decoration: none;
+    }
 
-.btn:hover {
-    background-color: blue;
-    border-radius: 20px 5px;
-    color: white;
-}
+    .btn:hover {
+        background-color: blue;
+        border-radius: 20px 5px;
+        color: white;
+    }
 
 
 /*Graphics*/
-img{
-    width: 200px;
-    border: 2px solid black;
-    border-radius: 20px 5px;
-}
+    img{
+        width: 200px;
+        border: 2px solid black;
+        border-radius: 20px 5px;
+        float: left;
+    }
 
-.photo{
-    float: left;
-}
-
-hr{
-    background-color: black;
-    color: black;
-    height: 1px;
-}
+    hr{
+        background-color: black;
+        color: black;
+        height: 1px;
+    }

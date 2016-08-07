@@ -8,7 +8,7 @@
     $article = get_main($link); 
     foreach($article as $a): 
 ?>
-                <div class="article">
+                <div>
                     <hr>
                     <h3><?=$a['title']?></h3>
                     <p><?=$a['content']?></p>
