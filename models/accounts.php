@@ -59,11 +59,14 @@
     
     function register(){
         if (isset($_POST["register"])) {
-            if (!empty($_POST['full_name']) && !empty($_POST['email']) && !empty($_POST['username']) && !empty($_POST['password'])) {
+            if (!empty($_POST['full_name']) && !empty($_POST['email']) && !empty($_POST['username']) && !empty($_POST['password']) && !empty($_POST['confirm'])) {
                 $full_name = addslashes($_POST['full_name']);
                 $email     = addslashes($_POST['email']);
                 $username  = addslashes($_POST['username']);
                 $password  = addslashes($_POST['password']);
+                $confirm = addslashes($_POST['confirm']);
+                if($password != $confirm)
+                    apologize("Пароли не совпадают!");
                 $link = db_connect();
                 $query     = mysqli_query($link, "SELECT * FROM usertbl WHERE username='$username'") or die(mysql_error());
                 $numrows   = mysqli_num_rows($query);
@@ -73,6 +76,15 @@
                     $link = db_connect();
                     $result = mysqli_query($link, $sql);
                     if ($result) {
+                        /*require_once('includes/class.phpmailer.php');
+                        $mail = new phpMailer();
+                        $mail->AddReplyTo("Ih01@i.ua","9-b.orgfree.com");
+                        $mail->SetFrom("Ih01@i.ua","9-b.orgfree.com");
+                        $mail->AddAddress($email, $username);
+                        $mail->Subject = "Добро пожаловать на сайт 10-Б";
+                        $body = file_get_contents('includes/email.html');
+                        $mail->MsgHTML($body);
+                        $mail->Send();*/
                         header("Location: index.php?article=account");
                     } else {
                         apologize("Невозможно создать аккаунт! Повторите попытку позже или обратитесь к администратору");

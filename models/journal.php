@@ -1,9 +1,9 @@
 <?php
         function get_students($link, $class = -1) {
             if ($class == -1)
-                $query = "SELECT * FROM students ORDER BY name";
+                $query = "SELECT * FROM students ORDER BY id";
             else
-                $query = "SELECT * FROM students WHERE class=".$class." ORDER BY name";
+                $query = "SELECT * FROM students WHERE class=".$class." ORDER BY id";
             $result = mysqli_query($link, $query);
             if (!$result) 
                 die(mysqli_error($link));
@@ -44,14 +44,19 @@
         }
         
         function get_average($link, $id, $from, $to){
-             $query = mysqli_query($link, "SELECT AVG(mark) FROM marks WHERE student=".$_GET['id']." AND 'date' BETWEEN $from AND $to");
-            if ($query) {
-                $row = mysqli_fetch_array($query);
-                if($row[0] ==  NULL)
-                    $row[0] = 'Не удалось получить средний бал!';
-                return $row[0];
-            } else {
-                return 'Не удалось получить средний бал!';
+            $marks = get_marks($link, $id);
+            $sum = 0;
+            $count = 0;
+            foreach ($marks as $mark) {
+                if($mark['date'] >= $from && $mark['date'] <= $to)
+                {
+                    $sum += $mark['mark'];
+                    $count++;
+                }
             }
+            if($count == 0)
+                return "Нету оценок в указанный период";
+            else
+                return $sum / $count;
         }
 ?>

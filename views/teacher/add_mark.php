@@ -1,5 +1,22 @@
 <?php include("includes/header.html")?>
 <?php include("includes/nav.html")?>
+<script src="scripts/jquery-3.1.0.js"></script>
+
+<script>
+$(function(){
+    var why = $("#why");
+    var theme = $("#theme");
+
+    theme.on("click", function(){
+        if(theme.prop("checked") == true){
+            why.prop("value", "Тематическая");
+        } else {
+            why.prop("value", "");
+        }
+    })
+});
+</script>
+
         <main>
             <article>
                 <h2>Добавление оценки</h2>
@@ -8,13 +25,14 @@
                         <input type="number" name="mark" value="" autofocus required>
                     </label><br>
                     <label>За что<br>
-                        <input type="text" name="why" value="" autofocus required>
+                        <input type="text" name="why" value="" id="why" autofocus required>
+                        <input type="checkbox" id="theme">Тематическая
                     </label><br>
                     <label>Дата<br>
                         <input type="date" name="date" required>
                     </label><br>
                     <label>
-                        <input name="addmark" type="submit" value="Сохранить" class="btn" required>
+                        <input name="addmark" type="submit" id="sbmt" value="Сохранить" class="btn" required>
                     </label>
                 </form>
 <?php
@@ -26,7 +44,7 @@
                     <p>
                         <i><?=$a['date']?></i>:  
                         <b><?=$a['mark']?></b>
-                        - <?=$a['why']?>
+                        - <?=$a['why'] == "Тематическая"?"<b>".$a['why']."</b>":$a['why']?>
                     </p>
                 </div>
 <?php endforeach ?>

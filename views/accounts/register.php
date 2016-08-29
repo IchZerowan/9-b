@@ -15,11 +15,15 @@
                     </p>
                     <p>
                         <label for="user_pass">Имя пользователя<br>
-                        <input class="input" id="username" name="username"size="20" type="text" value=""></label>
+                        <input class="input" id="username" name="username" size="20" type="text" value=""></label>
                     </p>
                     <p>
                         <label for="user_pass">Пароль<br>
-                        <input class="input" id="password" name="password"size="32"   type="password" value=""></label>
+                        <input class="input" id="password" name="password" size="32" type="password" value=""></label>
+                    </p>
+                    <p>
+                        <label for="user_pass">Повторите пароль<br>
+                        <input class="input" id="confirm" name="confirm" size="32" type="password" value=""></label>
                     </p>
                     <p><input class="btn" id="register" name= "register" type="submit" value="Зарегистрироваться"></p>
                     <p>Уже зарегистрированы? <a href= "index.php?action=login">Введите имя пользователя</a>!</p>

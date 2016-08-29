@@ -196,9 +196,7 @@ elseif (isset($_GET['teacher'])) {
 }
 
 else {
-    header('HTTP/1.1 404 Not Found');
-    header('Status: 404 Not Found');
-    apologize("Страница не найдена!");  
+    header("Location: index.php?article=main");
 }
 
 ?>

@@ -10,8 +10,6 @@
 ?>
                 <div>
                     <a href='<?="album/".$a['name']?>'><img src=<?="album/".$a['name']?> alt=<?=$a['name']?>></a>
-                    <br>
-                    <p><?=$a['name']?></p>
                 </div>
 <?php endforeach ?>
             </article>
