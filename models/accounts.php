@@ -76,15 +76,6 @@
                     $link = db_connect();
                     $result = mysqli_query($link, $sql);
                     if ($result) {
-                        /*require_once('includes/class.phpmailer.php');
-                        $mail = new phpMailer();
-                        $mail->AddReplyTo("Ih01@i.ua","9-b.orgfree.com");
-                        $mail->SetFrom("Ih01@i.ua","9-b.orgfree.com");
-                        $mail->AddAddress($email, $username);
-                        $mail->Subject = "Добро пожаловать на сайт 10-Б";
-                        $body = file_get_contents('includes/email.html');
-                        $mail->MsgHTML($body);
-                        $mail->Send();*/
                         header("Location: index.php?article=account");
                     } else {
                         apologize("Невозможно создать аккаунт! Повторите попытку позже или обратитесь к администратору");
